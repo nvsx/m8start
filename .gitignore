@@ -1,3 +1,9 @@
+# m8
+.env
+ext/
+node_modules/
+public/
+
 # Logs
 logs
 *.log
