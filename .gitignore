@@ -1,6 +1,7 @@
 # m8
 .env
 ext/
+files/
 node_modules/
 public/
 
