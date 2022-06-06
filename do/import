@@ -8,4 +8,4 @@ if [ "$0" != "$FILENAME" ]; then
 	exit
 fi
 
-rsync -avz ./import/ ./public
+rsync -avz ./site/import/ ./public

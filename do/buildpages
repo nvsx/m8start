@@ -1,0 +1,17 @@
+FILENAME='do/buildpages'
+
+if [ "$0" != "$FILENAME" ]; then
+	echo "error: must be called as ${FILENAME} from project directory"
+	echo "exiting"
+	exit
+fi
+
+REQ='http://localhost:8888'
+
+for FILE in `find site/ejspages -type f`; do
+	PAGE=`echo $FILE|sed 's/site\/ejspages//'`
+	BUILD_URL="${REQ}${PAGE}"
+	# echo "ejspage: ${PAGE}"
+	echo $FILE
+	curl $BUILD_URL > /dev/null 2>&1
+done
