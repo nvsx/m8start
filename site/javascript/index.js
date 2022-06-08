@@ -1,1 +1,1 @@
-console.log("m8 test")
+console.log("m8 hello world")

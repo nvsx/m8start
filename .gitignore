@@ -4,6 +4,7 @@ ext/
 files/
 node_modules/
 public/
+tmp/
 
 # Logs
 logs
