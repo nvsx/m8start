@@ -9,25 +9,27 @@ fi
 TIMESTAMP=`date +%s`
 
 # clear old public
-if [ -d "public" ]; then 
-	mv public tmp/public-$TIMESTAMP
-fi
-if [ ! -d "public" ]; then 
-	mkdir public
-fi
+# if [ -d "public" ]; then 
+# 	mv public tmp/public-$TIMESTAMP
+# fi
+# if [ ! -d "public" ]; then 
+# 	mkdir public
+# fi
 
 # import files:
-do/import
+# do/import
 
 # request new pages:
 REQ='http://localhost:8088'
-for FILE in `find site/ejspages -type f`; do
-	PAGE=`echo $FILE|sed 's/site\/ejspages//'`
-	PAGE=`echo $PAGE|sed 's/index\.ejs//'`
+for FILE in `find views/site/ -type f -name "index.ejs" -not -path '*/includes/*'`; do
+	PAGE=`echo $FILE|sed 's/index\.ejs//'`
+	PAGE=`echo $PAGE|sed 's/views\/site\///'`
+	PAGE=`echo $PAGE|sed 's/\/\///'`
 	BUILD_URL="${REQ}${PAGE}"
 	echo ""
-	echo "  file: ${FILE}"
-	echo "  page: ${PAGE}"
+	echo "file: ${FILE}"
+	echo "page: ${PAGE}"
+	echo " url: ${BUILD_URL}"
 	curl $BUILD_URL > /dev/null 2>&1
 done
 
