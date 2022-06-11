@@ -7,4 +7,5 @@ m8 starter project
 - https://github.com/nvsx/m8
 
 ## Matching m8 version
-- v0.0.1
+- v0.0.3
+
