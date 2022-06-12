@@ -1,0 +1,23 @@
+/* ++++++++++++++++++++++++++++++++++++++++++++ */
+/* page structure */
+html, body {
+	margin: 0;
+	padding: 0;
+	color: #333333;
+}
+a {
+	color: blue;
+}
+a.visited {
+	color: navy;
+}
+html, .page-header, .page-footer {
+	background-color: #ccc;
+	color: #000;
+} 
+.page-header a, .page-footer a {
+	color: #088;
+}
+body {
+	background-color: #fafafa;
+}

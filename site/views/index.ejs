@@ -1,17 +1,35 @@
-<%- include('includes/header', { title: "Homepage"}); %>
+<%- include('m8/includes/header', { title: "Homepage"}); %>
 
 <div class="sector">
 	<div class="container">
-		<h1>EJS works!</h1>
+		<h1>It works!</h1>
 		<p>
-			This is the generated "index.html" file cached as "public/index.html" and living primarily as "ejspages/index.html".
+			Generated with <strong>m8</strong>.
+		</p>
+		<p>
+			This is the generated "index.html" file, 
+			written to "public/index.html" 
+			and living primarily as "site/views/index.ejs".
 		</p>
 		<p>
 			<a href="/test1/">test1</a><br>
 			<a href="/test2/">test2</a><br>
 			<a href="/test3/test4/">test3/test4/</a><br>
 		</p>
+		<p> 
+			Also see these files. They are stored in "site/import"
+			and are published by the command "do/import".
+			<br>
+			<a href="/robots.txt">robots.txt</a><br>
+			<a href="/favicon.ico">favicon.ico</a><br>
+		</p>
+		<p>
+			Backend: <a href="/m8/ce">/m8/ce</a>
+		</p>
+		<p>
+			Development: <a href="/m8/cdtest">/m8/cdtest</a>
+		</p>
 	</div>
 </div>
 
-<%- include('includes/footer'); %>
+<%- include('m8/includes/footer'); %>

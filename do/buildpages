@@ -1,4 +1,4 @@
-FILENAME='do/pagesforce'
+FILENAME='do/buildpages'
 
 if [ "$0" != "$FILENAME" ]; then
 	echo "error: must be called as ${FILENAME} from project directory"
@@ -6,35 +6,24 @@ if [ "$0" != "$FILENAME" ]; then
 	exit
 fi
 
-TIMESTAMP=`date +%s`
-
-# clear old public
-# if [ -d "public" ]; then 
-# 	mv public tmp/public-$TIMESTAMP
-# fi
-# if [ ! -d "public" ]; then 
-# 	mkdir public
-# fi
-
-# import files:
-# do/import
-
-# request new pages:
 REQ='http://localhost:8088'
+URL1='http://localhost:8088/m8/staticgen?page='
 for FILE in `find views/site/ -type f -name "index.ejs" -not -path '*/includes/*'`; do
 	TARG=`echo $FILE|sed 's/views\/site\//public/'`
 	TARG=`echo $TARG|sed 's/\.ejs/\.html/'`
 	rm $TARG
 	PAGE=`echo $FILE|sed 's/index\.ejs//'`
-	PAGE=`echo $PAGE|sed 's/views\/site//'`
-	# PAGE=`echo $PAGE|sed 's/\/\///'`
+	PAGE=`echo $PAGE|sed 's/views\/site\///'`
 	BUILD_URL="${REQ}${PAGE}"
+	GEN_URL="${URL1}${PAGE}"
 	echo ""
 	echo "file: ${FILE}"
 	echo "targ: ${TARG}"
 	echo "page: ${PAGE}"
 	echo " url: ${BUILD_URL}"
-	curl $BUILD_URL > /dev/null 2>&1
+	echo "url1: ${GEN_URL}"
+	# curl $BUILD_URL > /dev/null 2>&1
+	curl $GEN_URL > /dev/null 2>&1
 done
 
 # EOF
