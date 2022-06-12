@@ -1,4 +1,4 @@
-FILENAME='do/buildpages'
+FILENAME='do/pagesforce'
 
 if [ "$0" != "$FILENAME" ]; then
 	echo "error: must be called as ${FILENAME} from project directory"
@@ -22,12 +22,16 @@ TIMESTAMP=`date +%s`
 # request new pages:
 REQ='http://localhost:8088'
 for FILE in `find views/site/ -type f -name "index.ejs" -not -path '*/includes/*'`; do
+	TARG=`echo $FILE|sed 's/views\/site\//public/'`
+	TARG=`echo $TARG|sed 's/\.ejs/\.html/'`
+	rm $TARG
 	PAGE=`echo $FILE|sed 's/index\.ejs//'`
-	PAGE=`echo $PAGE|sed 's/views\/site\///'`
-	PAGE=`echo $PAGE|sed 's/\/\///'`
+	PAGE=`echo $PAGE|sed 's/views\/site//'`
+	# PAGE=`echo $PAGE|sed 's/\/\///'`
 	BUILD_URL="${REQ}${PAGE}"
 	echo ""
 	echo "file: ${FILE}"
+	echo "targ: ${TARG}"
 	echo "page: ${PAGE}"
 	echo " url: ${BUILD_URL}"
 	curl $BUILD_URL > /dev/null 2>&1
