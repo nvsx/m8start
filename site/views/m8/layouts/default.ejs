@@ -1,5 +1,15 @@
 <%- include('../includes/header', { title: locals.title }); %>
 
-<%- locals.content %>
+<div class="sector">
+	<div class="container">
+		<h1><%- locals.title %></h1>
+	</div>
+</div>
+
+<div class="sector">
+	<div class="container">
+		<%- locals.content %>
+	</div>
+</div>
 
 <%- include('../includes/footer'); %>
