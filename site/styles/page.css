@@ -6,19 +6,19 @@ html, body {
 	color: #333333;
 }
 a {
-	color: blue;
+	color: cornflowerblue;
 }
 a.visited {
 	color: navy;
 }
 html, .page-header, .page-footer {
-	background-color: #ccc;
+	background-color: #bac;
 	color: #000;
 } 
 .page-header a, .page-footer a {
 	color: #088;
 }
 body {
-	background-color: #fafafa;
+	background-color: #bac;
 	font-family: arial, helvetica, sans-serif;
 }

@@ -7,6 +7,9 @@
 }
 .sector {
 	width: 100%;
+	background-color: lightsteelblue;
+	background-image: url("/img/pexels-asad-photo-maldives-457881.jpg");
+	background-size: cover;
 }
 .sector.dark {
 	background-color: #ccc;
@@ -18,4 +21,5 @@
 	border-color: #cfcfcf;
 	border-style: solid;
 	border-width: 0 1px 0 1px;
+	background-color: #fff;
 }

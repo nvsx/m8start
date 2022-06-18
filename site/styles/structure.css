@@ -3,6 +3,7 @@
 .page-header {
 	margin: 0;
 	padding: 20px 20px 10px 20px;
+	background-color: #bac;
 }
 .page-header .page-header-inner {
 	max-width: 960px;
@@ -42,6 +43,9 @@
 .navi-main .navi-main-inner ul li:last-child {
 	padding-right: 0;
 	border-right: none;
+}
+.navi-main .navi-main-inner ul li a {
+	color: #333;
 }
 .page-footer {
 	margin: 0; 
