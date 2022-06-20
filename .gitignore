@@ -1,5 +1,6 @@
 # m8
 .env
+.project.env
 ext/
 files/
 node_modules/
