@@ -1,0 +1,22 @@
+<%- include('../includes/header', { title: locals.title, sitename: locals.siteconfig.sitename}); %>
+
+<div class="sector">
+	<div class="container">
+		<h3 class="topic"><%- locals.pageData.topic %></h3>
+		<h1 class="headline"><%- locals.title %></h1>
+	</div>
+</div>
+
+<div class="sector">
+	<div class="container">
+		Description <%- locals.pageData.description %>
+	</div>
+</div>
+
+<div class="sector">
+	<div class="container">
+		<%- locals.content %>
+	</div>
+</div>
+
+<%- include('../includes/footer'); %>

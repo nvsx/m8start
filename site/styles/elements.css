@@ -12,3 +12,11 @@ h4 { font-size: 1.2rem; color: #005050; }
 h5 { font-size: 1.0rem; color: #005050; }
 h6 { font-size: 1.0rem; color: #005050; }
 
+h1.headline {
+	font-size: 1.3rem;
+	color: #333;
+}
+h3.topic {
+	font-size: 1.1rem;
+	color: teal;
+}
