@@ -16,7 +16,7 @@ if [ ! -f "$ENV_FILE" ]; then
 fi
 
 date 
-
+source $ENV_FILE
 
 echo "publishing with rsyn over ssh..."
 echo -n "SSH_USER_SERVER_PATH: "
@@ -33,3 +33,4 @@ rsync -avz --delete -e ssh ./public --exclude="files" $SSH_USER_SERVER_PATH
 
 date
 echo -n "finished "
+
