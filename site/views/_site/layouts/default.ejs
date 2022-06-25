@@ -1,14 +1,45 @@
-<%- include('../includes/header', { title: locals.title, sitename: locals.siteconfig.sitename}); %>
+<%- include('../includes/header', { title: locals.container.title, sitename: locals.siteconfig.sitename}); %>
 
 <div class="sector">
 	<div class="container">
-		<h1><%- locals.title %></h1>
+		<h1 class="headline"><%- locals.container.title %></h1>
 	</div>
 </div>
 
 <div class="sector">
 	<div class="container">
-		<%- locals.content %>
+		<%- locals.container.content %>
+	</div>
+</div>
+
+<% if(locals.latest_articles_show === true) { %>
+	<div class="sector">
+		<div class="container">
+			<%- locals.latest_articles %>
+		</div>
+	</div>
+<% } %>
+
+
+<% if(locals.container.id === 4) { %>
+	<div class="sector">
+		<div class="container">
+			<p>
+				<h5>
+					this is channel 4
+				</h5>
+				<a href="/blog1/the_slug.html">/blog1/the_slug.html</a>
+			</p>
+		</div>
+	</div>
+<% } %>
+
+<div class="sector">
+	<div class="container" style="background-color:papayawhip;">
+		<h3>Debug</h3>
+<pre style="background-color:lightpink;">
+<%- JSON.stringify(locals, null, 4) %>	
+</pre>
 	</div>
 </div>
 

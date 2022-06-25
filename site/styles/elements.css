@@ -13,10 +13,12 @@ h5 { font-size: 1.0rem; color: #005050; }
 h6 { font-size: 1.0rem; color: #005050; }
 
 h1.headline {
-	font-size: 1.3rem;
+	padding-top: 10px;
+	font-size: 1.5rem;
 	color: #333;
 }
 h3.topic {
+	padding-top: 5px;
 	font-size: 1.1rem;
 	color: teal;
 }
