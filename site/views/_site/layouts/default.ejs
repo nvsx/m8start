@@ -20,27 +20,34 @@
 	</div>
 <% } %>
 
-
-<% if(locals.container.id === 4) { %>
+<% if(locals.page.channel_articles && locals.page.channel_articles.length > 0) { %>
 	<div class="sector">
 		<div class="container">
 			<p>
 				<h5>
-					this is channel 4
+					Latest Articles:
 				</h5>
-				<a href="/blog1/the_slug.html">/blog1/the_slug.html</a>
+				<ul>
+					<% for(let i=0; i<locals.page.channel_articles.length; i++) { %>
+						<li>
+							this is an article
+						</li>
+					<% } %>
+				</ul>
 			</p>
 		</div>
 	</div>
 <% } %>
 
-<div class="sector">
-	<div class="container" style="background-color:papayawhip;">
-		<h3>Debug</h3>
-<pre style="background-color:lightpink;">
-<%- JSON.stringify(locals, null, 4) %>	
-</pre>
+<% if(locals.page.verbose > 3) { %>
+	<div class="sector">
+		<div class="container" style="background-color:papayawhip;">
+			<h3>Debug</h3>
+			<pre style="background-color:lightpink;">
+			<%- JSON.stringify(locals, null, 4) %>	
+			</pre>
+		</div>
 	</div>
-</div>
+<% } %>
 
 <%- include('../includes/footer'); %>

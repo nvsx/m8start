@@ -27,15 +27,18 @@
 	</div>
 <% } %>
 
-<div class="sector">
-	<div class="container" style="background-color:papayawhip;">
-		<h3>Debug</h3>
-		Channelid = <%- locals.article.channel %>
-		<br>
-<pre style="background-color:lightpink;">
-<%- JSON.stringify(locals, null, 4) %>	
-</pre>
+
+<% if(locals.page.verbose > 3) { %>
+	<div class="sector">
+		<div class="container" style="background-color:papayawhip;">
+			<h3>Debug</h3>
+			Channelid = <%- locals.article.channel %>
+			<br>
+			<pre style="background-color:lightpink;">
+				<%- JSON.stringify(locals, null, 4) %>	
+			</pre>
+		</div>
 	</div>
-</div>
+<% } %>
 
 <%- include('../includes/footer'); %>
