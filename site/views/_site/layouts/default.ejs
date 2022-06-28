@@ -28,17 +28,26 @@
 					Latest Articles:
 				</h5>
 				<ul>
-					<% for(let i=0; i<locals.page.channel_articles.length; i++) { %>
+					<% for(let i=0; i<locals.page.channel_articles.length; i++) { 
+						article = { 
+							path: locals.page.channel_articles[i].path || '#',
+							topic: locals.page.channel_articles[i].topic + ':' || '', 
+							title: locals.page.channel_articles[i].title || ''
+						}
+					%>
 						<li>
-							this is an article
+							<a href="<%- article.path %>">
+								<%- article.topic %>
+								<%- article.title %>
+							</a>
 						</li>
-					<% } %>
-				</ul>
-			</p>
+						<% } %>
+					</ul>
+				</p>
+			</div>
 		</div>
-	</div>
 <% } %>
-
+		
 <% if(locals.page.verbose > 3) { %>
 	<div class="sector">
 		<div class="container" style="background-color:papayawhip;">

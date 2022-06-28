@@ -1,4 +1,3 @@
 UserAgent: *
 
-Disallow: /m8
-
+Disallow: /_m8/ce
