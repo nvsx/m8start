@@ -2,12 +2,11 @@
 
 <div class="sector">
 	<div class="container">
-		<div class="breadcrumb">
-			<a href="/">Home</a> &gt;
-			<% for(let i=0; i<locals.page.breadcrumb.length; i++) { %>
-				<a href="<%- locals.page.breadcrumb[i].path %>">
+		<div class="breadcrumb" style="font-size:0.8rem;color:#aaa;display:inline-block;padding:3px;margin:2px;">
+			<% for(let i=0; i<locals.page.breadcrumb.length -1; i++) { %>
+				<a href="<%- locals.page.breadcrumb[i].path %>" style="color:#9ab;">
 					<%- locals.page.breadcrumb[i].title %>
-				</a>
+				</a> &gt;
 			<% } %>
 			<%- locals.node.title %>
 		</div>
