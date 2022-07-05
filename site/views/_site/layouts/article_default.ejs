@@ -1,4 +1,4 @@
-<%- include('../includes/header', { title: locals.page.title, sitename: locals.siteconfig.sitename}); %>
+<%- include('../includes/header', { title: locals.page.title, siteconfig: locals.siteconfig}); %>
 
 <div class="sector">
 	<div class="container">
@@ -35,7 +35,6 @@
 	</div>
 <% } %>
 
-
 <% if(locals.page.channel_articles && locals.page.channel_articles.length > 0) { %>
 	<div class="sector">
 		<div class="container">
@@ -64,8 +63,6 @@
 		</div>
 <% } %>
 
-
-
 <% if(locals.page.verbose > 3) { %>
 	<div class="sector">
 		<div class="container" style="background-color:papayawhip;">
@@ -78,7 +75,5 @@
 		</div>
 	</div>
 <% } %>
-
-
 
 <%- include('../includes/footer'); %>
