@@ -1,14 +1,9 @@
-<%- include('../includes/header', { title: locals.node.title, siteconfig: locals.siteconfig}); %>
+<%- include('includes/header', { title: locals.node.title, siteconfig: locals.siteconfig}); %>
 
 <div class="sector">
 	<div class="container">
 		<div class="breadcrumb" style="font-size:0.8rem;color:#aaa;display:inline-block;padding:3px;margin:2px;">
-			<% for(let i=0; i<locals.page.breadcrumb.length -1; i++) { %>
-				<a href="<%- locals.page.breadcrumb[i].path %>" style="color:#aab;">
-					<%- locals.page.breadcrumb[i].title %>
-				</a> &gt;
-			<% } %>
-			<%- locals.node.title %>
+			+++ DDDis is ddde homepage +++
 		</div>
 		<h1 class="headline"><%- locals.node.title %></h1>
 	</div>
@@ -35,41 +30,19 @@
 				<h5>
 					Latest Articles:
 				</h5>
-				<style type="text/css">
-					ul.list-latest-articles {
-						margin: 3px;
-						padding: 3px;
-						list-style-type: none;
-					}
-					ul.list-latest-articles li {
-						margin: 20px 0;
-						padding: 20px;
-						border: 1px solid silver;
-						border-radius: 3px;
-					}
-				</style>
-				<ul class="list-latest-articles">
+				<ul>
 					<% for(let i=0; i<locals.page.channel_articles.length; i++) { 
 						article = { 
 							path: locals.page.channel_articles[i].path || '#',
 							topic: locals.page.channel_articles[i].topic + ':' || '', 
-							title: locals.page.channel_articles[i].title || '', 
-							description: locals.page.channel_articles[i].description || ''
+							title: locals.page.channel_articles[i].title || ''
 						}
 					%>
 						<li>
 							<a href="<%- article.path %>">
-								<b>
-									<%- article.topic %>
-									<%- article.title %>
-								</b>
+								<%- article.topic %>
+								<%- article.title %>
 							</a>
-							<div>
-								<%- article.description %>
-							</div>
-							<div style="text-align:right;">
-								<a href="<%- article.path %>">read more...</a>
-							</div>
 						</li>
 						<% } %>
 					</ul>
@@ -89,4 +62,4 @@
 	</div>
 <% } %>
 
-<%- include('../includes/footer'); %>
+<%- include('includes/footer'); %>

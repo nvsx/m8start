@@ -1,11 +1,23 @@
-<%- include('../includes/header', { title: locals.node.title, siteconfig: locals.siteconfig}); %>
+<%- include('includes/header', { title: locals.page.title, siteconfig: locals.siteconfig}); %>
 
 <div class="sector">
 	<div class="container">
 		<div class="breadcrumb" style="font-size:0.8rem;color:#aaa;display:inline-block;padding:3px;margin:2px;">
-			+++ DDDis is ddde homepage +++
+			<% for(let i=0; i<locals.page.breadcrumb.length -1; i++) { %>
+				<a href="<%- locals.page.breadcrumb[i].path %>" style="color:#9ab;">
+					<%- locals.page.breadcrumb[i].title %>
+				</a> &gt;
+			<% } %>
+			<%- locals.node.title %>
 		</div>
+		<h3 class="topic"><%- locals.node.topic %></h3>
 		<h1 class="headline"><%- locals.node.title %></h1>
+	</div>
+</div>
+
+<div class="sector">
+	<div class="container article-description">
+		<%- locals.node.description %>
 	</div>
 </div>
 
@@ -50,16 +62,18 @@
 			</div>
 		</div>
 <% } %>
-		
+
 <% if(locals.page.verbose > 3) { %>
 	<div class="sector">
 		<div class="container" style="background-color:papayawhip;">
 			<h3>Debug</h3>
+			Channelid = <%- locals.node.channel %>
+			<br>
 			<pre style="background-color:lightpink;">
-			<%- JSON.stringify(locals, null, 4) %>	
+				<%- JSON.stringify(locals, null, 4) %>	
 			</pre>
 		</div>
 	</div>
 <% } %>
 
-<%- include('../includes/footer'); %>
+<%- include('includes/footer'); %>
