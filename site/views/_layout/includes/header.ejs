@@ -9,7 +9,7 @@
         <meta name="apple-mobile-web-app-capable" content="no" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="apple-touch-icon" href="/cfg/apple-touch-icon.png">
         <meta name="robots" content="index,follow,noarchive" />
 		<title><%= locals.title || "m8" %></title>
 		<link rel="stylesheet" href="/cfg/main.css" type="text/css" />
@@ -18,8 +18,8 @@
 		<div class="page-header">
 			<div class="page-header-inner">
 				<div class="page-logo">
-					<a href="/">
-						<img src="/img/logo.png" alt="<%- locals.siteconfig.sitename %>" />
+					<a href="<%- locals.siteconfig.url %>">
+						<img src="/cfg/logo.png" alt="<%- locals.siteconfig.sitename %>" />
 					</a>
 				</div>
 			</div>

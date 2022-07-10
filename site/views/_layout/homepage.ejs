@@ -12,6 +12,15 @@
 <div class="sector">
 	<div class="container">
 		<%- locals.node.content %>
+		<% // ############################# ELEMENTS ############################### %>
+		<% if(locals.element_mappings && locals.element_mappings.length > 0) { %>
+			<div>
+				<% for(let i=0; i<locals.element_mappings.length; i++) { %>
+					<%- locals.element_mappings[i].content %>
+				<% } %>
+			</div>
+		<% } %>
+		<% // ############################# /ELEMENTS ############################### %>
 	</div>
 </div>
 

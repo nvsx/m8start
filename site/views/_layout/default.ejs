@@ -3,12 +3,14 @@
 <div class="sector">
 	<div class="container">
 		<div class="breadcrumb" style="font-size:0.8rem;color:#aaa;display:inline-block;padding:3px;margin:2px;">
-			<% for(let i=0; i<locals.page.breadcrumb.length -1; i++) { %>
-				<a href="<%- locals.page.breadcrumb[i].path %>" style="color:#aab;">
-					<%- locals.page.breadcrumb[i].title %>
-				</a> &gt;
+			<% if(locals && locals.page && locals.page.breadcrumb) { %>
+				<% for(let i=0; i<locals.page.breadcrumb.length -1; i++) { %>
+					<a href="<%- locals.page.breadcrumb[i].path %>" style="color:#aab;">
+						<%- locals.page.breadcrumb[i].title %>
+					</a> &gt;
+				<% } %>
+				<%- locals.node.title %>
 			<% } %>
-			<%- locals.node.title %>
 		</div>
 		<h1 class="headline"><%- locals.node.title %></h1>
 	</div>
@@ -17,6 +19,15 @@
 <div class="sector">
 	<div class="container">
 		<%- locals.node.content %>
+		<% // ############################# ELEMENTS ############################### %>
+		<% if(locals.element_mappings && locals.element_mappings.length > 0) { %>
+			<div>
+				<% for(let i=0; i<locals.element_mappings.length; i++) { %>
+					<%- locals.element_mappings[i].content %>
+				<% } %>
+			</div>
+		<% } %>
+		<% // ############################# /ELEMENTS ############################### %>
 	</div>
 </div>
 
