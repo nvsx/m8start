@@ -1,3 +1,4 @@
+<!--
 <div class="navi-main">
 	<div class="navi-main-inner">
 		<ul>
@@ -13,6 +14,27 @@
 			<li>
 				<a href="/contact/">Contact</a>
 			</li>
+		</ul>
+	</div>
+</div>
+-->
+
+<div class="navi-main">
+	<div class="navi-main-inner">
+		<ul>
+			<% if(locals.navigation) { %>
+				<% for(let i=0; i<locals.navigation.length; i++) { 
+					let item = locals.navigation[i]; 
+				%>
+					<li>
+						<a href="<%- item.path %>">
+							<% if(item.active) { %><b><% } %>
+								<%- item.title %>
+							<% if(item.active) { %></b><% } %>
+						</a>
+					</li>
+				<% } %>
+			<% } %>
 		</ul>
 	</div>
 </div>
