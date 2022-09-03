@@ -3,7 +3,7 @@
 m8 starter project 
 
 ## Homepage
-- https://www.m8web.net
+- https://m8.nvsx.rocks
 
 ## Repositories
 - https://github.com/nvsx/m8start
