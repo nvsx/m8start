@@ -15,6 +15,7 @@ m8 starter project
 - cp .env.default .env
 - git clone https://github.com/nvsx/m8
 - cd m8
+- npm install
 - run/liveserver
 
 ## Localhost
