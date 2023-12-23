@@ -23,4 +23,4 @@ m8 starter project
 - Backend: http://localhost:8088/_m8
 
 ## Matching m8 version
-- v0.0.6
+- v0.0.8
