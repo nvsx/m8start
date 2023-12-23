@@ -2,6 +2,7 @@
 m8
 .env
 .bak
+start.db.bak
 .project.env
 ext/
 files/

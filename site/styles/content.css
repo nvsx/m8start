@@ -1,8 +1,8 @@
 /* content */
 .sector {
 	width: 100%;
-	background-color: lightsteelblue;
-	background-image: url("/img/pexels-asad-photo-maldives-457881.jpg");
+	background-color: #99a;
+	/* background-image: url("/img/pexels-asad-photo-maldives-457881.jpg"); */
 	background-size: cover;
 	padding: 0;
 	margin: 0; 
