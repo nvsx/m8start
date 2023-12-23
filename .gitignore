@@ -1,6 +1,7 @@
 # m8
 m8
 .env
+.bak
 .project.env
 ext/
 files/
